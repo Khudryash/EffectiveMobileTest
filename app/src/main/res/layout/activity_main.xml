@@ -146,11 +146,10 @@
         android:clickable="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView1"
+        android:id="@+id/homeStore_recycler"
         android:layout_width="0dp"
         android:layout_height="182dp"
         android:layout_marginTop="8dp"
-        android:background="@color/dark_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -166,7 +165,7 @@
         android:textSize="25sp"
         android:textColor="@color/dark_blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView1" />
+        app:layout_constraintTop_toBottomOf="@+id/homeStore_recycler" />
 
     <TextView
         android:id="@+id/textView8"
