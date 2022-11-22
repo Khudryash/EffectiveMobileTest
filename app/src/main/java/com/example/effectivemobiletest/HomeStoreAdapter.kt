@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.home_store_item.view.*
 
 
-class HomeStoreAdapter(val context: Context, val bannerList: List<HomeStore>?): RecyclerView.Adapter<HomeStoreAdapter.ViewHolder>() {
+class HomeStoreAdapter(private val context: Context, private val bannerList: List<HomeStore>?): RecyclerView.Adapter<HomeStoreAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var title: TextView
@@ -32,7 +32,7 @@ class HomeStoreAdapter(val context: Context, val bannerList: List<HomeStore>?): 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var itemView = LayoutInflater.from(context).inflate(R.layout.home_store_item, parent, false)
+        val itemView = LayoutInflater.from(context).inflate(R.layout.home_store_item, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -40,18 +40,18 @@ class HomeStoreAdapter(val context: Context, val bannerList: List<HomeStore>?): 
         Picasso.get()
             .load(bannerList!![position].picture)
             .into(holder.bannerImage)
-        holder.title.text = bannerList!![position].title
-        holder.subtitle.text = bannerList!![position].subtitle
-        if (bannerList!![position].is_new != true){
+        holder.title.text = bannerList[position].title
+        holder.subtitle.text = bannerList[position].subtitle
+        if (!bannerList[position].is_new){
+
             holder.isNewMark.visibility = View.INVISIBLE
-//            val params = holder.title.layoutParams as ConstraintLayout.LayoutParams
-//            params.topMargin = -20
-//            holder.title.layoutParams = params
         }
         else {
+
             holder.isNewMark.visibility = View.VISIBLE
         }
-        if (bannerList!![position].is_buy != true){
+        if (!bannerList[position].is_buy){
+
             holder.isBuy.visibility = View.INVISIBLE
         }
 

@@ -1,6 +1,6 @@
 package com.example.effectivemobiletest
 
-data class HomeData(
+data class HomeDataResponse(
     val best_seller: List<BestSeller>,
     val home_store: List<HomeStore>
 )
