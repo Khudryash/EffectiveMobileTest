@@ -11,4 +11,14 @@ class SharedRepository {
 
         return null
     }
+
+    suspend fun getProductDetailsData(): ProductDetailsResponse? {
+        val request = NetworkLayer.apiClient.getProductDetails()
+
+        if (request.isSuccessful) {
+            return request.body()
+        }
+
+        return null
+    }
 }

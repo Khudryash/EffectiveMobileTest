@@ -10,4 +10,8 @@ class ApiClient (
     suspend fun getHomeStore(): Response<HomeDataResponse> {
         return apiInterface.getHomeStore()
     }
+
+    suspend fun getProductDetails(): Response<ProductDetailsResponse> {
+        return apiInterface.getDetailsStore()
+    }
 }

@@ -1,11 +1,11 @@
 package com.example.effectivemobiletest
 
-import android.content.Context
+
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -14,14 +14,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.effectivemobiletest.databinding.ActivityMainBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.filter_layout.*
 import kotlinx.android.synthetic.main.filter_layout.view.*
 
 
 class MainActivity : AppCompatActivity() {
 
     val viewModel: SharedViewModel by lazy{
-        ViewModelProvider(this).get(SharedViewModel::class.java)
+        ViewModelProvider(this)[SharedViewModel::class.java]
     }
 
     lateinit var homeStoreAdapter: HomeStoreAdapter
@@ -36,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         filterButton.setOnClickListener{
              val bottomSheetDialog = BottomSheetDialog(

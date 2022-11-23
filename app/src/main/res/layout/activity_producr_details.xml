@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProducrDetails"
+    android:background="@color/white_dark">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/cancel_button_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_button" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/done_button_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cart" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Product Details"
+        android:textColor="@color/dark_blue"
+        android:textSize="18sp"
+        android:fontFamily="@font/markpro500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/images"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_button" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/modelTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="28dp"
+                android:text="Model Name"
+                android:textSize="24sp"
+                android:textColor="@color/dark_blue"
+                android:fontFamily="@font/markpro500"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="37dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="37dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/cancel_button_background"
+                app:srcCompat="@drawable/heart"/>
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:isIndicator="true"
+
+                android:progressTint="#FFB800"
+                android:progressBackgroundTint="#FFB800"
+                android:secondaryProgressTint="#FFB800"
+                android:rating="2.5"
+
+                app:layout_constraintStart_toStartOf="@+id/modelTitle"
+                app:layout_constraintTop_toBottomOf="@+id/modelTitle" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="57dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/modelTitle"
+                app:tabIndicatorColor="@color/orange"
+                app:tabIndicatorHeight="3dp"
+                app:tabSelectedTextColor="@color/dark_blue">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Details" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Features" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/specViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="109dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+                />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="109dp"-->
+<!--                android:id="@+id/specViewPager"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tabLayout"-->
+<!--                >-->
+<!--                <include layout="@layout/product_details_shop"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="110dp"-->
+<!--                    android:id="@+id/specViewPager"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/tabLayout"-->
+<!--                    />-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/specViewPager"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tabLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingBottom="29dp">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/d12"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="45dp"-->
+<!--                    android:layout_marginTop="33dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:srcCompat="@drawable/ic_cpu" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/d13"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="74dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/d12"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/d12"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/d12"-->
+<!--                    app:srcCompat="@drawable/ic_camera" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/d14"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="64dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/d13"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/d13"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/d13"-->
+<!--                    app:srcCompat="@drawable/ic_ram" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/d15"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="68dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/d14"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/d14"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/d14"-->
+<!--                    app:srcCompat="@drawable/ic_ssd" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/cpuSpec"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="9dp"-->
+<!--                    android:text="CPU"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/d12"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/d12"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/d12"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:textColor="#B7B7B7"-->
+<!--                    android:fontFamily="@font/markpro400"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/camSpec"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Camera"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/cpuSpec"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/d13"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/d13"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/cpuSpec"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:textColor="#B7B7B7"-->
+<!--                    android:fontFamily="@font/markpro400"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/ramSpec"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="RAM"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/camSpec"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/d14"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/d14"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/camSpec"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:textColor="#B7B7B7"-->
+<!--                    android:fontFamily="@font/markpro400"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/ssdSpec"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="SSD"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@+id/ramSpec"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/d15"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/d15"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/ramSpec"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:textColor="#B7B7B7"-->
+<!--                    android:fontFamily="@font/markpro400"/>-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/markpro500"
+                android:text="Select color and capacity"
+                android:textColor="@color/dark_blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/modelTitle"
+                app:layout_constraintTop_toBottomOf="@+id/specViewPager" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="72dp"
+                    android:layout_height="30dp"
+                    android:text="128 GB"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_selector"
+                    android:gravity="center"
+                    android:layout_marginEnd="20dp"/>
+                <RadioButton
+                    android:layout_width="72dp"
+                    android:layout_height="30dp"
+                    android:text="256 GB"
+                    android:button="@android:color/transparent"
+                    android:background="@drawable/radio_selector"
+                    android:gravity="center"/>
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

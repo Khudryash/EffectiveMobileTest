@@ -13,12 +13,24 @@ class SharedViewModel: ViewModel() {
     private val _homeDataLiveData = MutableLiveData<HomeDataResponse>()
     val homeDataLiveData: LiveData<HomeDataResponse> = _homeDataLiveData
 
+    private val _ProductDataLiveData = MutableLiveData<ProductDetailsResponse>()
+    val ProductDataLiveData: LiveData<ProductDetailsResponse> = _ProductDataLiveData
+
     fun refreshHome() {
         viewModelScope.launch {
 
             val response = repository.getHomeData()
 
             _homeDataLiveData.postValue(response)
+        }
+    }
+
+    fun refreshProduct() {
+        viewModelScope.launch {
+
+            val prodResponse = repository.getProductDetailsData()
+
+            _ProductDataLiveData.postValue(prodResponse)
         }
     }
 }

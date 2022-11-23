@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.best_seller_item.view.*
 
+import android.content.Intent
+
 class BestSellerAdapter(val context: Context, val bannerList: List<BestSeller>?): RecyclerView.Adapter<BestSellerAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+
 
         var title: TextView
         var discountPrice: TextView
@@ -27,11 +30,12 @@ class BestSellerAdapter(val context: Context, val bannerList: List<BestSeller>?)
             priceWithoutDiscount = itemView.priceWithoutDiscount
             picture = itemView.picture
             favorite = itemView.isFavorite
+
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var itemView = LayoutInflater.from(context).inflate(R.layout.best_seller_item, parent, false)
+        val itemView = LayoutInflater.from(context).inflate(R.layout.best_seller_item, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -62,6 +66,19 @@ class BestSellerAdapter(val context: Context, val bannerList: List<BestSeller>?)
                 holder.favorite.contentDescription = "favorite mark"
             }
             }
+
+        holder.itemView.setOnClickListener{
+            context.startActivity(Intent(
+                this.context,
+                ProducrDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        }
+        holder.picture.setOnClickListener{
+            context.startActivity(Intent(
+                this.context,
+                ProducrDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        }
+
+
     }
 
     override fun getItemCount(): Int {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="15dp"
@@ -20,6 +19,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="170dp"
         android:layout_height="182dp"
+        android:paddingStart="25dp"
         android:paddingEnd="25dp"
         android:background="@color/black">
 
@@ -27,7 +27,6 @@
             android:id="@+id/isNewMark"
             android:layout_width="27dp"
             android:layout_height="27dp"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="14dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,7 +36,6 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/markpro700"
             android:text="title"
@@ -50,7 +48,6 @@
             android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
             android:layout_marginBottom="26dp"
             android:fontFamily="@font/markpro400"
             android:text="subtitle"
@@ -63,7 +60,6 @@
             android:id="@+id/isBuy"
             android:layout_width="98dp"
             android:layout_height="23dp"
-            android:layout_marginStart="25dp"
             android:layout_marginBottom="26dp"
             android:background="@drawable/button_rounded"
             android:fontFamily="@font/markpro700"

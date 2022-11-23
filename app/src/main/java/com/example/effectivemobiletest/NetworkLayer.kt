@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkLayer {
 
-    val retrofitBulder = Retrofit.Builder()
+    val retrofitBulder: Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .baseUrl("https://run.mocky.io/v3/")
         .build()
