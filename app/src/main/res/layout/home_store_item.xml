@@ -31,7 +31,7 @@
             android:layout_marginTop="14dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/new_mark" />
+            android:src="@drawable/ic_new_mark" />
 
         <TextView
             android:id="@+id/title"

@@ -40,10 +40,10 @@ class BestSellerAdapter(val context: Context, val bannerList: List<BestSeller>?)
             .load(bannerList!![position].picture)
             .into(holder.picture)
         if(bannerList[position].is_favorites) {
-            holder.favorite.setImageResource(R.drawable.favorite_fill)
+            holder.favorite.setImageResource(R.drawable.ic_favorite_fill)
             holder.favorite.contentDescription = "favorite mark"
         } else {
-            holder.favorite.setImageResource(R.drawable.favorite_empty)
+            holder.favorite.setImageResource(R.drawable.ic_favorite_empty)
             holder.favorite.contentDescription = "not favorite mark"
         }
         holder.title.text = bannerList[position].title
@@ -55,10 +55,10 @@ class BestSellerAdapter(val context: Context, val bannerList: List<BestSeller>?)
         val favoriteClick = holder.favorite
         favoriteClick.setOnClickListener{
             if (favoriteClick.contentDescription == "favorite mark"){
-                favoriteClick.setImageResource(R.drawable.favorite_empty)
+                favoriteClick.setImageResource(R.drawable.ic_favorite_empty)
                 holder.favorite.contentDescription = "not favorite mark"
             } else {
-                holder.favorite.setImageResource(R.drawable.favorite_fill)
+                holder.favorite.setImageResource(R.drawable.ic_favorite_fill)
                 holder.favorite.contentDescription = "favorite mark"
             }
             }

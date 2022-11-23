@@ -19,6 +19,14 @@
     <style name="Theme.EffectiveMobileTest.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.EffectiveMobileTest.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="FilterDialogTheme" parent="Theme.Material3.Dark.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/FilterStyle</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="FilterStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 
     <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:statusBarColor">@color/dark_blue</item>

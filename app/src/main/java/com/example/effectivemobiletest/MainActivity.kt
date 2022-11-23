@@ -1,18 +1,21 @@
 package com.example.effectivemobiletest
 
+import android.content.Context
 import android.os.Bundle
-import android.util.Log.d
-import android.widget.ImageView
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.effectivemobiletest.databinding.ActivityMainBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.android.synthetic.main.filter_layout.*
+import kotlinx.android.synthetic.main.filter_layout.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +37,40 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        filterButton.setOnClickListener{
+             val bottomSheetDialog = BottomSheetDialog(
+                 this,
+                 R.style.FilterDialogTheme
+             )
+            val filterView = LayoutInflater.from(this)
+                .inflate(
+                    R.layout.filter_layout,
+                    findViewById(R.id.filerLayout)
+                )
+            bottomSheetDialog.setContentView(filterView)
+            bottomSheetDialog.show()
+
+            val brands = resources.getStringArray(R.array.brands)
+            val brandsAdapter = ArrayAdapter(this, R.layout.dropdown_item, brands)
+            filterView.brandsAutoCompleteTextView.setAdapter(brandsAdapter)
+
+            val price = resources.getStringArray(R.array.price)
+            val priceAdapter = ArrayAdapter(this, R.layout.dropdown_item, price)
+            filterView.priceAutoCompleteTextView.setAdapter(priceAdapter)
+
+            val size = resources.getStringArray(R.array.size)
+            val sizeAdapter = ArrayAdapter(this, R.layout.dropdown_item, size)
+            filterView.sizeAutoCompleteTextView.setAdapter(sizeAdapter)
+
+            filterView.cancel_button.setOnClickListener{
+                bottomSheetDialog.hide()
+            }
+            filterView.done_button.setOnClickListener{
+                bottomSheetDialog.hide()
+            }
+        }
+
+
         homeStore_recycler.setHasFixedSize(true)
         homeStoreLinearLayoutManager = LinearLayoutManager(
             this,
@@ -42,7 +79,6 @@ class MainActivity : AppCompatActivity() {
         )
         homeStore_recycler.layoutManager = homeStoreLinearLayoutManager
 
-//        bestSeller_recycler.setHasFixedSize(true)
         bestSellerGridLayoutManager = GridLayoutManager(
             this,
             2,
@@ -77,8 +113,5 @@ class MainActivity : AppCompatActivity() {
             bestSellerAdapter.notifyDataSetChanged()
             bestSeller_recycler.adapter = bestSellerAdapter
         }
-//        val favoriteClick = findViewById<ImageView>(R.id.isFavorite)
-//        favoriteClick.setOnClickListener{
-//            favoriteClick.setImageResource(R.drawable.favorite_empty)}
     }
 }
