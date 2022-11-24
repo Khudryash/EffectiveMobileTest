@@ -45,7 +45,10 @@ class ProductDetails : AppCompatActivity() {
             modelTitle.text = response.title
             rating.rating = response.rating.toFloat()
             price.text = "$" + response.price
+            capacityFirst.text = response.capacity[0]
+            capacitySecond.text = response.capacity[1]
 
+            
             if (response.isFavorites) {
                 favorite.setBackgroundResource(R.drawable.orange_button_background)
                 favorite.contentDescription = "is favorite mark"

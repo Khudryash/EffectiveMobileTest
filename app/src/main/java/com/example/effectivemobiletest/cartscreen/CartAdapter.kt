@@ -1,14 +1,18 @@
 package com.example.effectivemobiletest.cartscreen
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.effectivemobiletest.R
+import com.example.effectivemobiletest.productdetailsscreen.ProductDetails
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_producr_details.view.*
 import kotlinx.android.synthetic.main.cart_item.*
@@ -24,6 +28,7 @@ class CartAdapter(private val context: Context, private val basketList: List<Bas
         var minus: TextView
         val count: TextView
         var bin: ImageButton
+        var card: ConstraintLayout
 
         init {
             title = itemView.itemTitle
@@ -33,6 +38,7 @@ class CartAdapter(private val context: Context, private val basketList: List<Bas
             minus = itemView.countMinus
             count = itemView.counter
             bin = itemView.bin
+            card = itemView.cartCard
         }
     }
 
@@ -57,6 +63,10 @@ class CartAdapter(private val context: Context, private val basketList: List<Bas
         }
         holder.bin.setOnClickListener{
             holder.count.text = "0"
+        }
+
+        holder.card.setOnClickListener{
+            context.startActivity(Intent(context, ProductDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
 
     }

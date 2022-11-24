@@ -71,12 +71,12 @@ class BestSellerAdapter(val context: Context, val bannerList: List<BestSeller>?)
 
         holder.itemView.setOnClickListener{
             context.startActivity(Intent(
-                this.context,
+                context,
                 ProductDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
         holder.picture.setOnClickListener{
             context.startActivity(Intent(
-                this.context,
+                context,
                 ProductDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
 
