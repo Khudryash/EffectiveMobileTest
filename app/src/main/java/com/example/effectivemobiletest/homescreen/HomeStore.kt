@@ -1,4 +1,4 @@
-package com.example.effectivemobiletest
+package com.example.effectivemobiletest.homescreen
 
 data class HomeStore(
     val id: Int,

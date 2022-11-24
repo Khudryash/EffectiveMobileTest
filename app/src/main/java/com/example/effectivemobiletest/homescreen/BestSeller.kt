@@ -1,4 +1,4 @@
-package com.example.effectivemobiletest
+package com.example.effectivemobiletest.homescreen
 
 data class BestSeller(
     val discount_price: Int,

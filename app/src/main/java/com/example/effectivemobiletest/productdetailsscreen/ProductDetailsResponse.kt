@@ -1,4 +1,4 @@
-package com.example.effectivemobiletest
+package com.example.effectivemobiletest.productdetailsscreen
 
 data class ProductDetailsResponse(
     val CPU: String,

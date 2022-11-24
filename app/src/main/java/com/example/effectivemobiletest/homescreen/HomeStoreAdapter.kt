@@ -1,4 +1,4 @@
-package com.example.effectivemobiletest
+package com.example.effectivemobiletest.homescreen
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.effectivemobiletest.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.home_store_item.view.*
 

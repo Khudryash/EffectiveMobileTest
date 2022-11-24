@@ -1,4 +1,4 @@
-package com.example.effectivemobiletest
+package com.example.effectivemobiletest.homescreen
 
 import android.content.Context
 import android.graphics.Paint
@@ -12,6 +12,8 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.best_seller_item.view.*
 
 import android.content.Intent
+import com.example.effectivemobiletest.productdetailsscreen.ProductDetails
+import com.example.effectivemobiletest.R
 
 class BestSellerAdapter(val context: Context, val bannerList: List<BestSeller>?): RecyclerView.Adapter<BestSellerAdapter.ViewHolder>() {
 
@@ -70,12 +72,12 @@ class BestSellerAdapter(val context: Context, val bannerList: List<BestSeller>?)
         holder.itemView.setOnClickListener{
             context.startActivity(Intent(
                 this.context,
-                ProducrDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                ProductDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
         holder.picture.setOnClickListener{
             context.startActivity(Intent(
                 this.context,
-                ProducrDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                ProductDetails::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
 
 

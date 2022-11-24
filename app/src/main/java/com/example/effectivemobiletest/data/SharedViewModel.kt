@@ -1,9 +1,12 @@
-package com.example.effectivemobiletest
+package com.example.effectivemobiletest.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.effectivemobiletest.cartscreen.CartResponse
+import com.example.effectivemobiletest.homescreen.HomeDataResponse
+import com.example.effectivemobiletest.productdetailsscreen.ProductDetailsResponse
 import kotlinx.coroutines.launch
 
 class SharedViewModel: ViewModel() {
@@ -15,6 +18,9 @@ class SharedViewModel: ViewModel() {
 
     private val _ProductDataLiveData = MutableLiveData<ProductDetailsResponse>()
     val ProductDataLiveData: LiveData<ProductDetailsResponse> = _ProductDataLiveData
+
+    private val _CartDataLiveData = MutableLiveData<CartResponse>()
+    val CartDataLiveData: LiveData<CartResponse> = _CartDataLiveData
 
     fun refreshHome() {
         viewModelScope.launch {
@@ -31,6 +37,15 @@ class SharedViewModel: ViewModel() {
             val prodResponse = repository.getProductDetailsData()
 
             _ProductDataLiveData.postValue(prodResponse)
+        }
+    }
+
+    fun refreshCart() {
+        viewModelScope.launch {
+
+            val cartResponse = repository.getCart()
+
+            _CartDataLiveData.postValue(cartResponse)
         }
     }
 }

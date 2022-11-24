@@ -1,16 +1,16 @@
-package com.example.effectivemobiletest
+package com.example.effectivemobiletest.homescreen
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.ArrayAdapter
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.effectivemobiletest.data.SharedViewModel
+import com.example.effectivemobiletest.R
 import com.example.effectivemobiletest.databinding.ActivityMainBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*

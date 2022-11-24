@@ -13,7 +13,7 @@
         android:layout_height="37dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/cancel_button_background"
+        android:background="@drawable/dark_blue_button_background"
         android:src="@drawable/ic_cancel_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +31,7 @@
         android:fontFamily="@font/markpro500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/done_button_background" />
+        android:background="@drawable/orange_button_background" />
 
     <TextView
         android:id="@+id/textView"

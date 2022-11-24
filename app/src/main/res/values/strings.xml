@@ -28,5 +28,7 @@
         <item>5.5 to 6.5 inches</item>
         <item>6.5+ inches</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
