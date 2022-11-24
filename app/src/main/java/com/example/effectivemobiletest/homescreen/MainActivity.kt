@@ -1,6 +1,7 @@
 package com.example.effectivemobiletest.homescreen
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.ArrayAdapter
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.effectivemobiletest.data.SharedViewModel
 import com.example.effectivemobiletest.R
+import com.example.effectivemobiletest.cartscreen.Cart
 import com.example.effectivemobiletest.databinding.ActivityMainBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*
@@ -36,7 +38,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        cart_button.setOnClickListener{
+            startActivity(Intent(this, Cart::class.java))
+        }
         filterButton.setOnClickListener{
              val bottomSheetDialog = BottomSheetDialog(
                  this,
